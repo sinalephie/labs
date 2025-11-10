@@ -729,6 +729,43 @@ def residui(funzione,parametri,x,y,sy,colore='black',**kwargs):
   except:
     massim=sy
   plt.ylim(-max(np.abs(residui)*1.1+massim),max(np.abs(residui)*1.1+massim))
+
+import os
+from PIL import Image
+
+def combina_immagini(output_name="combined.png"):
+    # prendi tutti i file immagine nella cartella
+    images = [f for f in os.listdir('.') 
+              if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+
+    if len(images) < 2:
+        raise ValueError("Servono almeno due immagini nella cartella.")
+
+    # ordina per data di modifica (dalla più vecchia alla più recente)
+    images.sort(key=lambda x: os.path.getmtime(x))
+
+    # penultima = prima immagine
+    img1_path = images[-2]
+    # ultima = seconda immagine
+    img2_path = images[-1]
+
+    # apri le immagini
+    img1 = Image.open(img1_path)
+    img2 = Image.open(img2_path)
+
+    # dimensioni finali
+    w = max(img1.width, img2.width)
+    h = img1.height + img2.height
+
+    # nuova immagine
+    combined = Image.new("RGB", (w, h), (255, 255, 255))
+
+    # incolla le due immagini
+    combined.paste(img1, (0, 0))
+    combined.paste(img2, (0, img1.height))
+
+    combined.save(output_name)
+    print(f"Creato file: {output_name}")
   
 def fitlin(x,sx,y,sy,colorelinea=None,**kwargs):
   '''
