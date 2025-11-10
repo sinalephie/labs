@@ -27,7 +27,6 @@ ytick.right : True
 axes.grid : True
 axes.linewidth : 0.5
 grid.linewidth : 0.5
-
 lines.linewidth : 1.
 
 # Remove legend frame
@@ -37,8 +36,15 @@ legend.frameon : False
 savefig.bbox : tight
 savefig.pad_inches : 0.05
 
-# Use serif fonts
-# font.serif : Times
+# Fonts (Google Colab safe)
 font.family : serif
+font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
+
+# Label sizes (slightly larger)
+axes.titlesize : 16
+axes.labelsize : 14
+xtick.labelsize : 13
+ytick.labelsize : 13
+legend.fontsize : 13
 
