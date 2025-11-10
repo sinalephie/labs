@@ -763,6 +763,8 @@ def combina_immagini(output_name="combined.png"):
     combined.paste(img2, (0, img1.height))
 
     combined.save(output_name)
+    os.remove(img1_path)
+    os.remove(img2_path)
     print(f"Creato file: {output_name}")
   
 def fitlin(x,sx,y,sy,colorelinea=None,**kwargs):
