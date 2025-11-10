@@ -41,10 +41,8 @@ font.family : serif
 font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
 
-# Label sizes (slightly larger)
-axes.titlesize : 16
+# Slightly bigger labels, but keep tick numbers unchanged
+axes.titlesize : 14
 axes.labelsize : 14
-xtick.labelsize : 13
-ytick.labelsize : 13
 legend.fontsize : 13
 
