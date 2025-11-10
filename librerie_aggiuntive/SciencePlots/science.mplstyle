@@ -42,7 +42,7 @@ font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
 
 # Slightly bigger labels, but keep tick numbers unchanged
-axes.titlesize : 14
-axes.labelsize : 14
-legend.fontsize : 13
+axes.titlesize : 13
+axes.labelsize : 13
+
 
