@@ -729,11 +729,9 @@ def residui(funzione,parametri,x,y,sy,colore='black',**kwargs):
   except:
     massim=sy
   plt.ylim(-max(np.abs(residui)*1.1+massim),max(np.abs(residui)*1.1+massim))
-
-import os
-from PIL import Image
-
 def combina_immagini(output_name="combined.png"):
+    import os
+    from PIL import Image
     # prendi tutti i file immagine nella cartella
     images = [f for f in os.listdir('.') 
               if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
