@@ -65,8 +65,3 @@ font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
 
 
-# Fondo minimo per lasciare spazio a xlabel/offset anche nei plot bassi
-figure.subplot.bottom : 0.22
-
-
-
