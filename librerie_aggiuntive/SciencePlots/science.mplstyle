@@ -45,4 +45,12 @@ mathtext.fontset : dejavuserif
 axes.titlesize : 13
 axes.labelsize : 13
 
+# Grid: more dense
+axes.grid : True
+axes.grid.which : both
+grid.linestyle : --
+grid.color : k
+grid.alpha : 0.4
+grid.linewidth : 0.4
+
 
