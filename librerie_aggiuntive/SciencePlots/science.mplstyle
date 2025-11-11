@@ -1,3 +1,4 @@
+cambia il font 
 # Matplotlib style for scientific plotting
 # This is the base style for "SciencePlots"
 # see: https://github.com/garrettj403/SciencePlots
@@ -24,30 +25,24 @@ ytick.minor.visible : True
 ytick.right : True
 
 # Set line widths
-axes.grid : True
 axes.linewidth : 0.5
-grid.linewidth : 0.5
 lines.linewidth : 1.
 
-# Remove legend frame
-legend.frameon : False
+# Grid lines
+axes.grid : True
+axes.axisbelow : True
+grid.linestyle : --
+grid.color : k
+grid.alpha : 0.5
+grid.linewidth : 0.5
+
+# Legend
+legend.frameon : True
+legend.framealpha : 1.0
+legend.fancybox : True
+legend.numpoints : 1
 
 # Always save as 'tight'
 savefig.bbox : tight
 savefig.pad_inches : 0.05
-
-# Fonts (Google Colab safe)
-font.family : serif
-font.serif : DejaVu Serif
-mathtext.fontset : dejavuserif
-
-# Slightly bigger labels, but keep tick numbers unchanged
-axes.titlesize : 13
-axes.labelsize : 13
-# Grid slightly denser but subtle
-axes.grid : True
-grid.linestyle : --
-grid.color : k
-grid.alpha : 0.25       # molto più leggero
-grid.linewidth : 0.4     # un po’ più sottile
 
