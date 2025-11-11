@@ -64,11 +64,5 @@ font.family : serif
 font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
 
-# -------------------------------------------------------------------
-# LABEL PIÙ GRANDI (tick invariati)
-# -------------------------------------------------------------------
-axes.titlesize : 16
-axes.labelsize : 14
-legend.fontsize : 13
 
 
