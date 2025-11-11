@@ -835,6 +835,9 @@ def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
     kwargs['plot']=False
   if not 'residui' in kwargs:
     kwargs['residui']=False
+  if not 'plot_veloce' in kwargs:
+    kwargs['plot_veloce']=False
+    
     
   N=len(x) #  Numerosità
   if len(x)!=len(y):
