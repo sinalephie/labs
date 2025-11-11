@@ -1,11 +1,14 @@
 # Matplotlib style for scientific plotting
-# This is the base style for "SciencePlots"
-# see: https://github.com/garrettj403/SciencePlots
+# Based on the base style for "SciencePlots"
 
-# Set color cycle: blue, green, yellow, red, violet, gray
+# -------------------------------------------------------------------
+# COLORI
+# -------------------------------------------------------------------
 axes.prop_cycle : cycler('color', ['0C5DA5', '00B945', 'FF9500', 'FF2C00', '845B97', '474747', '9e9e9e'])
 
-# Set x axis
+# -------------------------------------------------------------------
+# ASSI X
+# -------------------------------------------------------------------
 xtick.direction : in
 xtick.major.size : 3
 xtick.major.width : 0.5
@@ -14,7 +17,14 @@ xtick.minor.width : 0.5
 xtick.minor.visible : True
 xtick.top : True
 
-# Set y axis
+# Disattiva offset e scientific notation automatica
+axes.formatter.useoffset : False
+axes.formatter.limits : -5, 5
+axes.formatter.use_mathtext : True
+
+# -------------------------------------------------------------------
+# ASSI Y
+# -------------------------------------------------------------------
 ytick.direction : in
 ytick.major.size : 3
 ytick.major.width : 0.5
@@ -23,24 +33,42 @@ ytick.minor.width : 0.5
 ytick.minor.visible : True
 ytick.right : True
 
-# Set line widths
+# -------------------------------------------------------------------
+# SPESSORI LINEE
+# -------------------------------------------------------------------
 axes.linewidth : 0.5
 lines.linewidth : 1.
 
-# Grid lines
+# -------------------------------------------------------------------
+# GRIGLIA (leggermente più delicata)
+# -------------------------------------------------------------------
 axes.grid : True
 axes.axisbelow : True
 grid.linestyle : --
 grid.color : k
-grid.alpha : 0.5
-grid.linewidth : 0.5
+grid.alpha : 0.25
+grid.linewidth : 0.4
 
-# Legend
+# -------------------------------------------------------------------
+# LEGENDA
+# -------------------------------------------------------------------
 legend.frameon : True
 legend.framealpha : 1.0
 legend.fancybox : True
 legend.numpoints : 1
 
-# Always save as 'tight'
-savefig.pad_inches : 0.05
+# -------------------------------------------------------------------
+# FONT (solo DejaVu Serif per compatibilità totale con Colab)
+# -------------------------------------------------------------------
+font.family : serif
+font.serif : DejaVu Serif
+mathtext.fontset : dejavuserif
+
+# -------------------------------------------------------------------
+# LABEL PIÙ GRANDI (tick invariati)
+# -------------------------------------------------------------------
+axes.titlesize : 16
+axes.labelsize : 14
+legend.fontsize : 13
+
 
