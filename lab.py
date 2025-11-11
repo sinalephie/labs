@@ -767,7 +767,7 @@ def combina_immagini(output_name="combined.png"):
     os.remove(img2_path)
     print(f"Creato file: {output_name}")
   
-def fitlin(x,sx,y,sy,colorelinea=None,**kwargs):
+def fitlin(x,sx,y,sy,colorelinea=None,**kwargs,spessorelinea=None):
   '''
   1. ESEMPIO
   
@@ -955,6 +955,33 @@ def fitlin(x,sx,y,sy,colorelinea=None,**kwargs):
   erroreintercetta=matrice[0][1]
   pendenza=matrice[1][0]
   errorependenza=matrice[1][1]
+  if kwargs['plot_veloce']==True:
+    plt.figure(figsize=(8,5))
+    lex=np.array([kwargs['xsinistra'] - spazio,kwargs['xdestra'] + spazio])
+    ley=pendenza*lex + intercetta
+    plt.plot(lex,ley,colorelinea,spessorelinea)
+    plt.errorbar(x,y,yerr=sy,xerr=sx,fmt='o',**opzioniplot)
+    plt.figure(figsize=(8,3))
+    if 'capsize' not in opzioniplot:
+      opzioniplot['capsize']=2
+    if 'linestyle' not in opzioniplot:
+      opzioniplot['linestyle']='-'
+    import matplotlib.pyplot as plt
+    residui=[]
+    for c in range (len(x)):
+      residuo=y[c]-(pendenza*x[c]+intercetta)
+      residui.append(residuo)
+    lex=np.array([kwargs['xsinistra'] - spazio,kwargs['xdestra'] + spazio])
+    plt.plot(lex,[0,0],linestyle=opzioniplot['linestyle'],color=colorelinea)
+    if 'linestyle' in opzioniplot:
+      del opzioniplot['linestyle']
+    plt.errorbar(x,residui,yerr=sy,fmt='o',**opzioniplot)
+    try:
+      massim=max(sy)
+    except:
+      massim=sy
+    plt.ylim(-max(np.abs(residui)*1.1+massim),max(np.abs(residui)*1.1+massim))
+    
   if kwargs['plot']==True:
     import matplotlib.pyplot as plt
     lex=np.array([kwargs['xsinistra'] - spazio,kwargs['xdestra'] + spazio])
@@ -996,7 +1023,7 @@ def fitlin(x,sx,y,sy,colorelinea=None,**kwargs):
   cov = resultt.cov_beta[1][0] 
   from collections import namedtuple
   matrice = namedtuple('parametri_dall_interpolazione', ['intercetta', 's_intercetta','pendenza','s_pendenza','covarianza'])
-  matrice = matrice(intercetta=intercetta, s_intercetta=erroreintercetta,pendenza=pendenza,s_pendenza=errorependenza,covarianza=cov)
+  matrice = matrice(intercetta = intercetta, s_intercetta=erroreintercetta,pendenza=pendenza,s_pendenza=errorependenza,covarianza=cov)
   return matrice
 
 
