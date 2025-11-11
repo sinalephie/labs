@@ -64,5 +64,17 @@ font.family : serif
 font.serif : DejaVu Serif
 mathtext.fontset : dejavuserif
 
+# --- Export safe: niente tagli in basso ---
+savefig.bbox : standard         # evita il crop "tight"
+savefig.pad_inches : 0.08       # un filo di margine extra
+
+# Gestione automatica spazi (meglio di tight_layout)
+figure.constrained_layout.use : True
+constrained_layout.h_pad : 0.02
+constrained_layout.w_pad : 0.02
+
+# Fondo minimo per lasciare spazio a xlabel/offset anche nei plot bassi
+figure.subplot.bottom : 0.22
+
 
 
