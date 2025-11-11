@@ -768,6 +768,7 @@ def combina_immagini(output_name="combined.png"):
     print(f"Creato file: {output_name}")
   
 def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
+  import matplotlib.pyplot as plt
   '''
   1. ESEMPIO
   
