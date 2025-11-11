@@ -961,6 +961,7 @@ def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
     ley=pendenza*lex + intercetta
     plt.plot(lex,ley,colorelinea,spessorelinea)
     plt.errorbar(x,y,yerr=sy,xerr=sx,fmt='o',**opzioniplot)
+    plt.legend()
     plt.figure(figsize=(8,3))
     if 'capsize' not in opzioniplot:
       opzioniplot['capsize']=2
@@ -975,6 +976,8 @@ def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
     plt.plot(lex,[0,0],linestyle=opzioniplot['linestyle'],color=colorelinea)
     if 'linestyle' in opzioniplot:
       del opzioniplot['linestyle']
+    if 'label' in opzioniplot:
+      del opzioniplot['label']
     plt.errorbar(x,residui,yerr=sy,fmt='o',**opzioniplot)
     try:
       massim=max(sy)
