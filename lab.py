@@ -960,7 +960,7 @@ def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
     plt.figure(figsize=(8,5))
     lex=np.array([kwargs['xsinistra'] - spazio,kwargs['xdestra'] + spazio])
     ley=pendenza*lex + intercetta
-    plt.plot(lex,ley,colorelinea,spessorelinea)
+    plt.plot(lex,ley,color=colorelinea,lw=spessorelinea)
     plt.errorbar(x,y,yerr=sy,xerr=sx,fmt='o',**opzioniplot)
     plt.legend()
     plt.figure(figsize=(8,3))
