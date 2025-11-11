@@ -767,7 +767,7 @@ def combina_immagini(output_name="combined.png"):
     os.remove(img2_path)
     print(f"Creato file: {output_name}")
   
-def fitlin(x,sx,y,sy,colorelinea=None,**kwargs,spessorelinea=None):
+def fitlin(x,sx,y,sy,colorelinea=None,spessorelinea=None,**kwargs):
   '''
   1. ESEMPIO
   
